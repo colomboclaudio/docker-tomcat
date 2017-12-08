@@ -140,5 +140,12 @@ RUN set -e \
 		exit 1; \
 	fi
 
+#instal other apps
+RUN apt-get update && apt-get install -y nano
+
+#copy config
+#COPY  tomcat-users.xml  /usr/local/tomcat/conf/tomcat-users.xml
+
+
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
